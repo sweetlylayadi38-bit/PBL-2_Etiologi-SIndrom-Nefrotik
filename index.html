@@ -120,6 +120,17 @@ kbd{font-family:var(--f-mono);font-size:12px;border:1px solid var(--rule);border
 .btn:active{transform:translateY(1px)}
 @media (max-width:980px){.end{grid-template-columns:minmax(0,1fr);background-position:8% center}.end-in{grid-column:1;padding-block:30vh 10vh}.end::before{content:"";position:absolute;inset:0;background:color-mix(in oklab,var(--bg) 70%,transparent);z-index:-1}}
 
+/* Daftar pustaka */
+.refs{max-width:1560px;margin:0 auto;padding-block:12vh 16vh;border-top:1px solid var(--rule);scroll-margin-top:var(--bar)}
+.refs h2{font-size:clamp(32px,3.6vw,56px);font-weight:800;letter-spacing:-.035em;line-height:1;margin-bottom:clamp(24px,4vh,44px)}
+.reflist{list-style:none;margin:0;padding:0;columns:2 440px;column-gap:56px;counter-reset:ref}
+.reflist li{break-inside:avoid;display:grid;grid-template-columns:2.6em minmax(0,1fr);padding:13px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.55;color:var(--soft);counter-increment:ref;overflow-wrap:anywhere}
+.reflist li::before{content:counter(ref) ".";font-family:var(--f-mono);font-size:13px;color:var(--accent);padding-top:2px;font-variant-numeric:tabular-nums}
+.reflist a{color:var(--ink);text-decoration:underline;text-decoration-color:color-mix(in oklab,var(--accent) 70%,transparent);text-underline-offset:3px}
+.reflist a:hover{color:#FFFFFF;text-decoration-color:var(--ink)}
+.toc-refs{display:block;margin-top:18px;color:var(--soft);font-size:14.5px;text-decoration:none;padding:10px 0;border-top:2px solid var(--ink)}
+.toc-refs:hover{color:var(--ink)}
+
 /* Dialog */
 dialog{border:0;padding:0;background:transparent;max-width:none;max-height:none}
 dialog::backdrop{background:rgba(30,6,7,.82)}
@@ -172,13 +183,36 @@ dialog::backdrop{background:rgba(30,6,7,.82)}
   <section class="end art gut">
     <div class="end-in">
       <h2>Akhir presentasi</h2>
-      <button class="btn" id="toTop" type="button"><svg class="ico"><use href="#i-up"/></svg>Kembali ke daftar adegan</button>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn" id="toTop" type="button"><svg class="ico"><use href="#i-up"/></svg>Kembali ke daftar adegan</button><a class="btn" href="#pustaka" style="background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);text-decoration:none">Daftar pustaka</a></div>
     </div>
+  </section>
+  <section class="refs gut" id="pustaka" aria-labelledby="pustakaH">
+    <h2 id="pustakaH">Daftar Pustaka</h2>
+    <ol class="reflist">
+      <li><span>Noone DG, Iijima K, Parekh R. Idiopathic nephrotic syndrome in children. Lancet. 2018;392(10141):61–74. doi:<a href="https://doi.org/10.1016/S0140-6736(18)30536-1" target="_blank" rel="noopener">10.1016/S0140-6736(18)30536-1</a></span></li>
+      <li><span>Trautmann A, Boyer O, Hodson E, Bagga A, Gipson DS, Samuel S, et al. IPNA clinical practice recommendations for the diagnosis and management of children with steroid-sensitive nephrotic syndrome. Pediatr Nephrol. 2023;38(3):877–919. doi:<a href="https://doi.org/10.1007/s00467-022-05739-3" target="_blank" rel="noopener">10.1007/s00467-022-05739-3</a></span></li>
+      <li><span>Trihono PP, Alatas H, Tambunan T, Pardede SO, editor. Konsensus tata laksana sindrom nefrotik idiopatik pada anak. Edisi ke-2. Jakarta: Badan Penerbit Ikatan Dokter Anak Indonesia; 2012.</span></li>
+      <li><span>Nephrotic eyes [gambar]. Wikimedia Commons; 2013 [diakses 16 Okt 2026]. Lisensi CC BY-SA 3.0. Tersedia dari: <a href="https://commons.wikimedia.org/wiki/File:Nephrotic_eyes.JPG" target="_blank" rel="noopener">https://commons.wikimedia.org/wiki/File:Nephrotic_eyes.JPG</a></span></li>
+      <li><span>Lal K, Perveen A. Nephrotic syndrome in children: a review. Medicine (Baltimore). 2026;105(11):e47921. doi:<a href="https://doi.org/10.1097/MD.0000000000047921" target="_blank" rel="noopener">10.1097/MD.0000000000047921</a></span></li>
+      <li><span>Endardjo S, Tanurahardja B, Lisnawati, Saraswati M, Susanto YDB, Miranda ME. Patologi anatomi 1: kelainan glomerulus [materi kuliah K11]. Modul Ginjal dan Cairan Tubuh. Jakarta: Fakultas Kedokteran Universitas Indonesia; 2025. Rekap dan gambar slide tersedia dari: <a href="https://sweetlylayadi38-bit.github.io/Sumatif_2_GCT/" target="_blank" rel="noopener">https://sweetlylayadi38-bit.github.io/Sumatif_2_GCT/</a></span></li>
+      <li><span>Gbadegesin RA, Adeyemo A, Webb NJA, Greenbaum LA, Abeyagunawardena A, Thalgahagoda S, et al. HLA-DQA1 and PLCG2 are candidate risk loci for childhood-onset steroid-sensitive nephrotic syndrome. J Am Soc Nephrol. 2015;26(7):1701–10. doi:<a href="https://doi.org/10.1681/ASN.2014030247" target="_blank" rel="noopener">10.1681/ASN.2014030247</a></span></li>
+      <li><span>Sadowski CE, Lovric S, Ashraf S, Pabst WL, Gee HY, Kohl S, et al. A single-gene cause in 29.5% of cases of steroid-resistant nephrotic syndrome. J Am Soc Nephrol. 2015;26(6):1279–89. doi:<a href="https://doi.org/10.1681/ASN.2014050489" target="_blank" rel="noopener">10.1681/ASN.2014050489</a></span></li>
+      <li><span>Lane BM, Cason R, Esezobor CI, Gbadegesin RA. Genetics of childhood steroid sensitive nephrotic syndrome: an update. Front Pediatr. 2019;7:8. doi:<a href="https://doi.org/10.3389/fped.2019.00008" target="_blank" rel="noopener">10.3389/fped.2019.00008</a></span></li>
+      <li><span>Ha TS. Genetics of hereditary nephrotic syndrome: a clinical review. Korean J Pediatr. 2017;60(3):55–63. doi:<a href="https://doi.org/10.3345/kjp.2017.60.3.55" target="_blank" rel="noopener">10.3345/kjp.2017.60.3.55</a></span></li>
+      <li><span>International Study of Kidney Disease in Children. Nephrotic syndrome in children: prediction of histopathology from clinical and laboratory characteristics at time of diagnosis. Kidney Int. 1978;13(2):159–65. doi:<a href="https://doi.org/10.1038/ki.1978.23" target="_blank" rel="noopener">10.1038/ki.1978.23</a></span></li>
+      <li><span>Schultz M. Plasmodium falciparum nephrosis edema, PHIL 3894 [gambar]. Centers for Disease Control and Prevention Public Health Image Library; 1975 [diakses 16 Okt 2026]. Domain publik. Tersedia dari: <a href="https://commons.wikimedia.org/wiki/File:Plasmodium_falciparum_nephrosis_edema_PHIL_3894_lores.jpg" target="_blank" rel="noopener">https://commons.wikimedia.org/wiki/File:Plasmodium_falciparum_nephrosis_edema_PHIL_3894_lores.jpg</a></span></li>
+      <li><span>Shalhoub RJ. Pathogenesis of lipoid nephrosis: a disorder of T-cell function. Lancet. 1974;2(7880):556–60. doi:<a href="https://doi.org/10.1016/s0140-6736(74)91880-7" target="_blank" rel="noopener">10.1016/s0140-6736(74)91880-7</a></span></li>
+      <li><span>Colucci M, Oniszczuk J, Vivarelli M, Audard V. B-cell dysregulation in idiopathic nephrotic syndrome: what we know and what we need to discover. Front Immunol. 2022;13:823204. doi:<a href="https://doi.org/10.3389/fimmu.2022.823204" target="_blank" rel="noopener">10.3389/fimmu.2022.823204</a></span></li>
+      <li><span>Hengel FE, Dehde S, Lassé M, Zahner G, Seifert L, Schnarre A, et al. Autoantibodies targeting nephrin in podocytopathies. N Engl J Med. 2024;391(5):422–33. doi:<a href="https://doi.org/10.1056/NEJMoa2314471" target="_blank" rel="noopener">10.1056/NEJMoa2314471</a></span></li>
+      <li><span>Kaarthigeyan K, Sivanandam S, Jothilakshmi K, Matthai J. Nephrotic syndrome following a single bee sting in a child. Indian J Nephrol. 2012;22(1):57–8. doi:<a href="https://doi.org/10.4103/0971-4065.83742" target="_blank" rel="noopener">10.4103/0971-4065.83742</a></span></li>
+      <li><span>Schwartz GJ, Muñoz A, Schneider MF, Mak RH, Kaskel F, Warady BA, et al. New equations to estimate GFR in children with CKD. J Am Soc Nephrol. 2009;20(3):629–37. doi:<a href="https://doi.org/10.1681/ASN.2008030287" target="_blank" rel="noopener">10.1681/ASN.2008030287</a></span></li>
+      <li><span>Kidney Disease: Improving Global Outcomes (KDIGO) Glomerular Diseases Work Group. KDIGO 2021 clinical practice guideline for the management of glomerular diseases. Kidney Int. 2021;100(4S):S1–276. doi:<a href="https://doi.org/10.1016/j.kint.2021.05.021" target="_blank" rel="noopener">10.1016/j.kint.2021.05.021</a></span></li>
+    </ol>
   </section>
 </main>
 
 <dialog id="zoom" aria-label="Ilustrasi diperbesar"><div class="zin"><img id="zoomImg" alt=""><button class="close" id="zoomClose" type="button" aria-label="Tutup"><svg class="ico"><use href="#i-x"/></svg></button></div></dialog>
-<dialog id="toc" aria-labelledby="tocH"><h2 id="tocH">Daftar adegan</h2><button class="close" id="tocClose" type="button" aria-label="Tutup"><svg class="ico"><use href="#i-x"/></svg></button><ol class="index" id="tocList"></ol></dialog>
+<dialog id="toc" aria-labelledby="tocH"><h2 id="tocH">Daftar adegan</h2><button class="close" id="tocClose" type="button" aria-label="Tutup"><svg class="ico"><use href="#i-x"/></svg></button><ol class="index" id="tocList"></ol><a class="toc-refs" href="#pustaka" id="tocRefs">Daftar pustaka</a></dialog>
 
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
@@ -304,7 +338,7 @@ document.fonts&&document.fonts.ready.then(()=>ScrollTrigger.refresh());
 
 /* Posisi gulir tiap tahap, untuk keyboard dan klik penanda */
 function stopY(c,j){const st=pins[c],n=IMGS[c].length;return st.start+(j+0.5)/n*(st.end-st.start)}
-function allStops(){const a=[0];pins.forEach((st,c)=>{for(let j=0;j<IMGS[c].length;j++)a.push(stopY(c,j))});a.push(document.querySelector(".end").getBoundingClientRect().top+window.scrollY-BAR);return a}
+function allStops(){const a=[0];pins.forEach((st,c)=>{for(let j=0;j<IMGS[c].length;j++)a.push(stopY(c,j))});a.push(document.querySelector(".end").getBoundingClientRect().top+window.scrollY-BAR);a.push(document.querySelector("#pustaka").getBoundingClientRect().top+window.scrollY-BAR);return a}
 function goChapter(c){goY(stopY(c,0))}
 document.addEventListener("keydown",e=>{
   if(e.target.closest("input,textarea,select")||e.metaKey||e.ctrlKey||e.altKey)return;
@@ -329,6 +363,7 @@ document.addEventListener("click",e=>{
 $("#toTop").onclick=()=>goY(0);
 $("#zoomClose").onclick=()=>$("#zoom").close();
 $("#zoom").addEventListener("click",e=>{if(e.target.id==="zoom")$("#zoom").close()});
+document.getElementById("tocRefs").addEventListener("click",()=>$("#toc").close());
 $("#tocBtn").onclick=()=>$("#toc").showModal();
 $("#tocClose").onclick=()=>$("#toc").close();
 $("#toc").addEventListener("click",e=>{if(e.target.id==="toc")$("#toc").close()});

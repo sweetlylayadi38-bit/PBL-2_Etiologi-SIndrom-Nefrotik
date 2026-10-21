@@ -14,6 +14,8 @@ Presentasi gulir (scroll) untuk Tugas Mandiri PBL ke-2, Modul Ginjal dan Cairan 
 | Berkas | Isi |
 |---|---|
 | `index.html` | Halaman presentasi |
+| `mindmap.html` | Mindmap poin-poin etiologi, 8 cabang (tautan ada di bagian penutup presentasi) |
+| `MINDMAP.md` | Versi teks poin-poin mindmap |
 | `steps/` | Ilustrasi per tahap |
 | `bg/cover.webp` | Ilustrasi sampul |
 | `vendor/` | GSAP 3.12.5 dan ScrollTrigger, disimpan lokal |
